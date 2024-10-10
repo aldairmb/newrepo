@@ -22,7 +22,7 @@ invCont.buildByClassificationId = async function (req, res, next) {
 
     const grid = await utilities.buildClassificationGrid(data);
     const nav = await utilities.getNav();
-    const className = data[0].classification_name; // Get the classification name for the title
+    const className = data[0].classification_name;
 
     res.render("inventory/classification", {
       title: `${className} Vehicles`,
@@ -31,7 +31,7 @@ invCont.buildByClassificationId = async function (req, res, next) {
     });
   } catch (error) {
     console.error("Error in buildByClassificationId:", error);
-    next(error); // Pass error to the Express error handler
+    next(error);
   }
 };
 
